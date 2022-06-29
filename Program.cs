@@ -1,3 +1,6 @@
+using Microsoft.AspNetCore.Http;
+using System.Text.Json;
+using WebApplication1.Models;
 using WebApplication1.Services;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -27,5 +30,14 @@ app.UseRouting();
 app.UseAuthorization();
 
 app.MapRazorPages();
+
+
+app.MapGet("/products", (context) =>
+{
+    var products = app.Services.GetService<JsonFileProductService>().GetProducts();
+    var json = JsonSerializer.Serialize<IEnumerable<Product>>(products);
+    context.Response.ContentType = "application/json"; //tell the browser you're sending JSON data and most browsers will format it for you
+    return context.Response.WriteAsync(json); 
+});
 
 app.Run();
