@@ -8,7 +8,7 @@ Display JSON (JavaScript Object Notation) data on a ASP.NET Razor page by the fo
 
 ## API (Application Programming Interface)
 ability to call another thing in a formalized way
-- Here we want to make a tiny simple web API that provides these products as a service to people: If people go to the ...website/products, it will return these products details in a JSON format.
+- Here we want to make a tiny simple web API that provides these products as a service to people: If people go to the ...URL.../products, it will return these products details in a JSON format.
 
 ## Acknowledgements
 This project is basically an learning outcome of [ASP.NET Core 101](https://youtu.be/lE8NdaX97m0?list=PLdo4fOcmZ0oW8nviYduHq7bmKode-p8Wy).
